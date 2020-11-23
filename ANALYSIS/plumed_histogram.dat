@@ -1,0 +1,20 @@
+rmsd_closed: READ FILE=COLVAR_final VALUES=rmsd_closed_charmm_6vxx IGNORE_TIME
+rmsd_open: READ FILE=COLVAR_final VALUES=rmsd_open IGNORE_TIME
+PRINT ARG=rmsd_closed,rmsd_open FILE=check
+
+#rw: REWEIGHT_METAD TEMP=300
+HISTOGRAM ...
+  ARG=rmsd_closed,rmsd_open
+  GRID_MIN=0,0
+  GRID_MAX=2.0,2.0
+  GRID_BIN=200,200
+  BANDWIDTH=0.01,0.01
+  #KERNEL=discrete
+  #LOGWEIGHTS=rw
+  LABEL=hh
+... HISTOGRAM
+
+
+DUMPGRID GRID=hh FILE=histo  STRIDE=10000
+CONVERT_TO_FES GRID=hh LABEL=FES_temp TEMP=300
+DUMPGRID GRID=FES_temp FILE=fes_reweighted.dat STRIDE=10000

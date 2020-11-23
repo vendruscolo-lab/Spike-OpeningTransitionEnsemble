@@ -1,0 +1,33 @@
+#include "amber99sb-ildn.ff/forcefield.itp"
+#include "glycam06h.itp"
+#include "ions_nb_Dang.itp"
+#include "ions_Dang.itp"
+#include "ProtHA_glycharge.itp"
+#include "ProtHB_gly.itp"
+#include "ProtHP_gly.itp"
+
+; Include water topology
+#include "amber99sb-ildn.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "amber99sb-ildn.ff/ions.itp"
+
+[ system ]
+; Name
+SARS-CoV2 in water
+
+[ molecules ]
+; Compound        #mols
+Protein_chain_A             1
+Protein_chain_B             1
+Protein_chain_P             1
+SOL         218562
+NA               686
+CL               657
