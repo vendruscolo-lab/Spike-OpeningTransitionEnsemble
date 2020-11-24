@@ -1,0 +1,6 @@
+[ atomtypes ]
+;name  at.num    mass      charge   ptype   sigma    epsilon
+  Na_d  11      22.98980    1.00      A     0.2350   0.5439 ; Smith, D. E. & Dang, L. X. J. Chem. Phys.(1994)100:3757
+  Cl_d  17      35.45300   -1.00      A     0.4000   0.4184 ; Smith, D. E. & Dang, L. X. J. Chem. Phys.(1994)100:3757
+
+	
