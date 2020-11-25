@@ -6,5 +6,5 @@ This repository contains the necessary topology, structure, gromacs parameter an
 - PRODUCTION containst the plumed file and the associated companion files such as an index file, data GMM file (SARS_COV2.dat) and pdb files 
 - ANALYSIS folder contains the plumed histogram file to project the 2D FES using the equilibrated trajectory data of the EMMI simulations. 
 
-The entire trajectories can be found in Zenobo
+The entire trajectories can be found in Zenobo https://zenodo.org/record/4289126#.X76fCi2l1sE
 
